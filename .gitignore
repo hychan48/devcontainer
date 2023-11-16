@@ -128,3 +128,11 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/.gitignore
+/.idea/deployment.xml
+/.idea/devcontainer.iml
+/.idea/jsLibraryMappings.xml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/vcs.xml
