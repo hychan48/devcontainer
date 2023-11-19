@@ -17,9 +17,10 @@ setup() {
     # ls /root/projects/devcontainer/test/installers
     # echo $DIR/../../src/setup/profile-config.bash
     # src/setup/profile-config.bash
-    ls -l "$DIR/../../src/setup/profile-config.bash"
+    # ls -l "$DIR/../../src/setup/profile-config.bash"
+    source "$DIR/../../src/setup/profile-config.bash"
     # load /root/projects/devcontainer/src/setup/profile-config.bash
-    source /root/projects/devcontainer/src/setup/profile-config.bash
+    # source /root/projects/devcontainer/src/setup/profile-config.bash
     # load $DIR/../../src/setup/profile-config.bash1
     # printenv PROJECT_ROOT
 }

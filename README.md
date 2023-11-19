@@ -15,3 +15,8 @@ docker pull jchan48h/devcontainer:latest
 
 ```
 
+## On new User
+```bash
+# non docker
+
+```
