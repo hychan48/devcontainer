@@ -3,9 +3,13 @@
 install_omz_jc(){
   set -euxo pipefail
   # check if zsh is installed
-  test -e /usr/bin/zsh || apt-get install -y zsh git curl
+  test -e /usr/bin/zsh || apt update && apt install -y zsh git curl && rm -rf /var/lib/apt/lists/*
+  # Make it your default shell: chsh -s $(which zsh) or use sudo lchsh $USER if you are on Fedora
+  # https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH
+  printenv SHELL | grep -iwq zsh || chsh -s $(which zsh) $(whoami) && export SHELL=$(which zsh)
   # check if oh-my-zsh is installed
-  test -e $HOME/.oh-my-zsh || sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  # https://github.com/ohmyzsh/ohmyzsh/issues/5873
+  test -e $HOME/.oh-my-zsh || sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" -s --batch
   # check if zsh-autosuggestions is installed
   test -e $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions \
     || git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions && \

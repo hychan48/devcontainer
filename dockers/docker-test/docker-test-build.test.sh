@@ -22,3 +22,4 @@ docker build -t docker-test:dev -f ./dockers/docker-test/Dockerfile .
 
 exit 0
 docker pull debian:bookworm
+docker pull buildpack-deps:bookworm

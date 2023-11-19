@@ -137,3 +137,5 @@ dist
 /.idea/modules.xml
 /.idea/vcs.xml
 /.idea/codeStyles/codeStyleConfig.xml
+/test/test_helper/
+/test/bats/

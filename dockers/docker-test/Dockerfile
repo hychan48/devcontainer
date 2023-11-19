@@ -1,4 +1,6 @@
 FROM debian:bookworm
+# i should be using buildkit for this
+# FROM buildpack-deps:bookworm
 # kinda the template
 # expects mounted volume 
 

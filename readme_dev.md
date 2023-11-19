@@ -63,3 +63,18 @@ docker image ls
 
 
 ```
+# OMZ Only
+```bash
+docker pull buildpack-deps:bookworm # 12
+# omz test - bash exec
+(N="buildpack-deps"; docker run -it --name $N -v "$HOME/.ssh/:/root/.ssh" -v "$(pwd):/app" -w "/app" --hostname $N --rm $N:bookworm bash)
+(N="buildpack-deps"; docker run -it --name $N -v "$HOME/.ssh/:/root/.ssh" -v "$(pwd):/app" -w "/app" --hostname $N --rm --entrypoint ./assets/entrypoints.d/entrypoint.sh $N:bookworm bash)
+./test/bats/bin/bats ./test/installers/main.bats
+src/setup/profile-config.bash
+
+# omz - one liner
+( docker run -it --name docker-test -v "$HOME/.ssh/:/root/.ssh" -v "$(pwd):/app" -w "/app" --hostname docker-test --rm jchan48h/docker-test:latest zsh )
+( docker run -it --name docker-test -v "$HOME/.ssh/:/root/.ssh" -v "$(pwd):/app" -w "/app" --hostname docker-test --rm  --entrypoint ./assets/entrypoints.d/entrypoint.sh jchan48h/docker-test:latest zsh )
+( docker run -it --name docker-test -v "$HOME/.ssh/:/root/.ssh" -v "$(pwd):/app" -w "/app" --hostname docker-test --rm --entrypoint ./assets/entrypoints.d/entrypoint.sh jchan48h/docker-test:latest zsh )
+
+```
