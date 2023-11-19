@@ -25,5 +25,10 @@ VSCode Docker Dev Container
 git submodule update --init --recursive
 
 chmod +x ./src/installers/**.sh
+chmod +x ./src/installers/**.bash
+chmod +x ./src/scripts/**.bash
+chmod +x ./test/installers/**.bats
 ```
 
+# Todo
+* add linux_general etc.

@@ -7,6 +7,11 @@ VSCode Docker Dev Container
 * https://hub.docker.com/
 
 
-# First Time Setup
+# Docker Run
+```bash
+# hychan48 -> jchan48h
+docker pull jchan48h/devcontainer:latest
+# docker run -it --rm --name devcontainer -v $(pwd):/home/devcontainer/project jchan48h/devcontainer:latest
+
 ```
-```
+
