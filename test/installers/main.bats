@@ -35,7 +35,8 @@ tmp_scratch(){
   
 }
 @test "install_omz_jc" {
-  run install_omz_jc
+  # run install_omz_jc
+  run main
   assert_success
   # assert_output "tmps" # does nothing
   # assert_output "tmps" # does nothing

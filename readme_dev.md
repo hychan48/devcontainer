@@ -69,6 +69,12 @@ docker pull buildpack-deps:bookworm # 12
 # omz test - bash exec
 (N="buildpack-deps"; docker run -it --name $N -v "$HOME/.ssh/:/root/.ssh" -v "$(pwd):/app" -w "/app" --hostname $N --rm $N:bookworm bash)
 (N="buildpack-deps"; docker run -it --name $N -v "$HOME/.ssh/:/root/.ssh" -v "$(pwd):/app" -w "/app" --hostname $N --rm --entrypoint ./assets/entrypoints.d/entrypoint.sh $N:bookworm bash)
+(N="buildpack-deps"; docker run -it --name $N -v "$HOME/.ssh/:/root/.ssh" -v "$(pwd):/app" -w "/app" --hostname $N --rm --entrypoint ./assets/entrypoints.d/entrypoint.sh $N:bookworm ./src/setup/profile-config.bash)
+
+# omz
+(N="buildpack-deps"; docker run -it --name $N -v "$HOME/.ssh/:/root/.ssh" -v "$(pwd):/app" -w "/app" --hostname $N --rm --entrypoint ./assets/entrypoints.d/entrypoint.sh $N:bookworm ./test/installers/main.bats)
+
+(N="buildpack-deps"; docker run -it --name $N -v "$HOME/.ssh/:/root/.ssh" -v "$(pwd):/app" -w "/app" --hostname $N --rm --entrypoint ./assets/entrypoints.d/entrypoint.sh $N:bookworm ./test/installers/main.bats)
 ./test/bats/bin/bats ./test/installers/main.bats
 src/setup/profile-config.bash
 
