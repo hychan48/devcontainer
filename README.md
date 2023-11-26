@@ -81,3 +81,12 @@ Could not connect to ssh-agent on local host (\\.\pipe\openssh-ssh-agent). Make 
 
 * i should probably use root instead? makes things easier
 * devcontainer has pandoc
+
+
+## Plugins of Interest
+* plugin isnt a bad idea
+* and/or searcher
+* https://containers.dev/features
+```
+ghcr.io/mamba-org/devcontainer-features/micromamba:1
+```
