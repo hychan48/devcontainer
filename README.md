@@ -1,6 +1,16 @@
 # devcontainer
 VSCode Docker Dev Container
+* Under Construction
+* currenty empty
+* https://hub.docker.com/repository/docker/jchan48h/deb-network/general
+  * old one
+* try Packer?
 
+## push fixme / test
+* use f1 to launch devcontainer to try?
+```bash
+docker push jchan48h/devcontainer:<tagname>
+```
 
 ```txt
 .
@@ -27,7 +37,7 @@ docker build --pull --rm -f ".devcontainer\Dockerfile" -t devcontainer:latest ".
 docker container ls --all
 
 
- docker run -it --rm devcontainer:latest ".devcontainer" --name dc --hostname dc ".devcontainer"
+docker run -it --rm devcontainer:latest ".devcontainer" --name dc --hostname dc ".devcontainer"
 
 docker image ls
  ## oh did i use my debian.,, why is it installing docker
