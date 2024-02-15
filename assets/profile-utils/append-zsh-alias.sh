@@ -30,6 +30,8 @@ alias cdd="cd `git rev-parse --show-toplevel`"
 # careful running this one... should skip certain files or focus on certain files
 # like .sh etc. because it can break... it shouldnt do recurse i feel either
 # alias fixcrlf="find . -type f -exec sed -i 's/\r$//' {} \;"
+####### WARNING
+# find . -type f -exec sed -i \'s/\r$//\' {} \;'
 # alias crlfRm='find . -type f -exec sed -i \'s/\r$//\' {} \;'
 # remember VSCode can add to path
 # TERM=xterm-256color + tmux
