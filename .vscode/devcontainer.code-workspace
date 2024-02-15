@@ -5,5 +5,7 @@
 			"path": ".."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"files.eol": "\n"
+	}
 }

@@ -1,7 +1,23 @@
 # Hychan48's Dev Container
-VSCode Docker Dev Container
 * Under Construction
-* currenty empty
+## Tasks
+- [ ] Common Dev Dependencies
+- [ ] OMZ ZSH Shell
+  - [ ] Aliases
+  - [ ] Plugins
+- [ ] Git
+- [ ] SSH Keys and Secrets
+- [ ] VSCode Extensions and Settings
+- [ ] Packer / WSL Docker
+
+## Backlog
+* $profile
+* ahk / other key bindings
+* wsl
+  * xeyes / gui
+* other ssh stuff like config
+
+## VSCode Docker Dev Container
 * https://hub.docker.com/repository/docker/jchan48h/deb-network/general
   * old one
 * try Packer?

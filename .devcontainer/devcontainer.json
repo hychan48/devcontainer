@@ -7,12 +7,19 @@
 	// https://containers.dev/templates
 	// "image": "mcr.microsoft.com/devcontainers/base:bullseye", // debian 11... old
 	"image": "mcr.microsoft.com/devcontainers/base:ubuntu", //jammy 22.04... newer than bulleyes
-
+		// image or build file
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	"features": {
 		"ghcr.io/devcontainers-contrib/features/zsh-plugins:0": "0.0.^4",
 		"ghcr.io/devcontainers/features/sshd:1":"1.0.^9"
-	}
+	},
+	/* default for tini init : false */
+	"init":false,
+	"privileged":false
+	/**
+		mounts 
+	*/
+
 	
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.

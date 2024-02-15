@@ -1,3 +1,48 @@
+# Commands
+## Files
+```bash
+tree .devcontainer .vscode
+code .devcontainer/devcontainer.json\
+[devcontainers.reference](https://containers.dev/implementors/json_reference/)
+[devcontainers.Dockerfile](https://containers.dev/guide/dockerfile)
+[devcontainers.features](https://containers.dev/features)
+```
+```bash
+pnpm add -g @devcontainers/cli
+# https://containers.dev/guide/prebuild
+# devcontainer build --workspace-folder . --push true --image-name <my_image_name>:<optional_image_version
+docker image prune -f
+docker container prune -f
+devcontainer --help
+devcontainer build --help
+devcontainer build --workspace-folder . --image-name jchan48h/devcontainer:dev
+devcontainer up --workspace-folder .
+devcontainer up --workspace-folder ./.devcontainer
+```
+
+* todo - make a devcontainer for showing commands jupyter like
+## build
+* --workspace-folder .
+* --config expects `.devcontainer/devcontainer.json`
+```bash
+#!pwsh.exe
+devcontainer build --workspace-folder . --image-name jchan48h/devcontainer:dev
+
+devcontainer build --workspace-folder . --image-name jchan48h/devcontainer:dev --push true
+
+docker push jchan48h/devcontainer:dev
+
+
+```
+## up
+```bash
+#!pwsh.exe
+devcontainer up --workspace-folder .
+
+```
+
+## Features
+
 # Git and VS Code Dev Containers
 - "name" - Specifies a display name for the dev container.
 
