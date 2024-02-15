@@ -63,6 +63,9 @@ git config --global core.filemode
 * [x] ssh
 * [x] git
 * [x] python3
+* [ ] network
+  * [x] ifconfig
+  * [x] ip
 * [ ] node
 * [ ] pipx
 * [ ] nginx
@@ -71,6 +74,8 @@ git config --global core.filemode
 * [ ] tmux
   * screen
 * [ ] systemctl (negative...)
+* other cat
+* wsl seems beter tbh
 
 
 ## Backlog
