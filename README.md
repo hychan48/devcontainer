@@ -1,16 +1,102 @@
 # Hychan48's Dev Container
-VSCode Docker Dev Container
 * Under Construction
-* currenty empty
+## Tasks
+- [ ] Common Dev Dependencies
+  * might've been done from devcontainer
+- [x] OMZ ZSH Shell
+  - [x] Aliases
+  - [x] Plugins
+- [ ] Git
+  - [x] Git config is passed over. just need to be careful of some of the configs
+- [ ] SSH Keys and Secrets
+  - [x] Dev container auto mounts ssh-agent
+  - [ ] SSH Config
+
+- [ ] VSCode Extensions and Settings
+- [ ] Packer / WSL Docker
+## up down
+* [labs/git_readme_devcontainers.md](labs/git_readme_devcontainers.md)
+* [.devcontainer/Dockerfile](.devcontainer/Dockerfile)
+* [.devcontainer/devcontainer.json](.devcontainer/devcontainer.json)
+```bash
+#!pwsh.exe
+pnpm add -g @devcontainers/cli
+git submodule update --init --recursive # have to do this before the container starts
+# might want to add some git stuff to the container
+
+devcontainer build --workspace-folder . --image-name jchan48h/devcontainer:dev
+devcontainer up --id-label name=val --workspace-folder . --remove-existing-container # force and no detach...
+devcontainer exec --id-label name=val --workspace-folder . "zsh"
+# todo launch / attach... need command for that. and fix the container
+
+git config --global --add safe.directory /workspaces/devcontainer
+
+git submodule init
+git submodule update
+git-submodule --help
+
+git config --global --list
+
+git submodule deinit test/bats
+git submodule deinit -f test/bats
+git submodule deinit -f test/test_helper/bats-assert
+git submodule deinit -f test/test_helper/bats-support
+
+# can't do this in the devcontainer
+git submodule add https://github.com/bats-core/bats-core.git test/bats
+git submodule add https://github.com/bats-core/bats-support.git test/test_helper/bats-support
+git submodule add https://github.com/bats-core/bats-assert.git test/test_helper/bats-assert
+
+git clone --recurse-submodules <repository-url>
+# if cloned already
+git submodule update --init
+## or
+git submodule update --init --recursive
+
+git config --global core.filemode false
+git config --global core.filemode
+```
+# Exists
+* [x] Rsync
+* [x] wget
+* [x] curl
+* [x] ssh
+* [x] git
+* [x] python3
+* [ ] network
+  * [x] ifconfig
+  * [x] ip
+* [ ] node
+* [ ] pipx
+* [ ] nginx
+* [ ] sshd
+* [ ] sudo -e
+* [ ] tmux
+  * screen
+* [ ] systemctl (negative...)
+* other cat
+* wsl seems beter tbh
+
+
+## Backlog
+* $profile
+* ahk / other key bindings
+* wsl
+  * xeyes / gui
+* other ssh stuff like config
+
+## VSCode Docker Dev Container
 * https://hub.docker.com/repository/docker/jchan48h/deb-network/general
   * old one
 * try Packer?
 
 ## push fixme / test
 * use f1 to launch devcontainer to try?
-```bash
-docker push jchan48h/devcontainer:<tagname>
-```
+
+
+
+
+
 
 ```txt
 .
@@ -126,6 +212,10 @@ docker pull jchan48h/devcontainer:latest
 ```powershell
 # Run this on a new pull?
 git submodule init
+
+git config --global --add safe.directory /workspaces/devcontainer
+git config --global auto.crlf input # this one is fake
+git config --global core.autocrlf input # this one...
 
 # submodule name
 rmdir -force test

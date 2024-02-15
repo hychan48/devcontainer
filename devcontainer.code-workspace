@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "devcontainer",
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.eol": "\n"
+	}
+}
