@@ -2,7 +2,7 @@
 	"folders": [
 		{
 			"name": "devcontainer",
-			"path": ".."
+			"path": "."
 		}
 	],
 	"settings": {

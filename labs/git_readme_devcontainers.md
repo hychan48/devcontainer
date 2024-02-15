@@ -16,9 +16,28 @@ docker container prune -f
 devcontainer --help
 devcontainer build --help
 devcontainer build --workspace-folder . --image-name jchan48h/devcontainer:dev
+docker container stop $(docker container ls -aq) # stop all containers
+docker container prune -f # remove all containers
+
+devcontainer up --help
 devcontainer up --workspace-folder .
-devcontainer up --workspace-folder ./.devcontainer
+devcontainer up --id-label name=val --workspace-folder . 
+#------
+# have to ctrl c... to get out
+devcontainer up --id-label name=val --workspace-folder . --remove-existing-container # force
+docker exec -it $(docker ps -q) 
+devcontainer exec --help
+# oh taht's what -label-id is for
+# re-eventing the wheel
+devcontainer exec --id-label name=val --workspace-folder . "zsh"
+cat /home/vscode/hello.txt
+sudo cat /root/hello.txt
+exit 
+
+# devcontainer down --help # doesnt exist
+# devcontainer set-up # setup as 
 ```
+```bash
 
 * todo - make a devcontainer for showing commands jupyter like
 ## build
@@ -40,7 +59,30 @@ docker push jchan48h/devcontainer:dev
 devcontainer up --workspace-folder .
 
 ```
+### Fast Devcontainer Build
+```bash
+# faster to not run the devcontainer with vscode when testing
+docker image prune -f
+devcontainer build --workspace-folder . --image-name jchan48h/devcontainer:dev
+# same hash build and up... which make sit easy to find i guess
+# too many danglign iamges wth
+devcontainer up --workspace-folder .
+# devcontainer up with name
 
+docker run -it --rm jchan48h/devcontainer:dev
+# check shell
+tree /workspace
+./test/tests/smoke.bats
+uname -a
+# ohh it didnt mount?
+exit
+
+```
+```bash
+# duplicate vscode project in new window
+code --new-window .
+
+```
 ## Features
 
 # Git and VS Code Dev Containers

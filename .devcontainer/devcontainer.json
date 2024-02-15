@@ -5,13 +5,25 @@
 	"name": "Ubuntu 22", // actually a key ? lol
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	// https://containers.dev/templates
+	/**
+	image or build file --------------
+	code labs/git_readme_devcontainers.md
+	
+	devcontainer build --workspace-folder . --image-name jchan48h/devcontainer:dev
+
+	*/
 	// "image": "mcr.microsoft.com/devcontainers/base:bullseye", // debian 11... old
-	"image": "mcr.microsoft.com/devcontainers/base:ubuntu", //jammy 22.04... newer than bulleyes
-		// image or build file
+	// "image": "mcr.microsoft.com/devcontainers/base:ubuntu", //jammy 22.04... newer than bulleyes
+	"build": {
+		"dockerfile": "Dockerfile",
+		"context": ".."
+	},
+	//---------------------------------
 	// Features to add to the dev container. More info: https://containers.dev/features.
+	// builds too slow
 	"features": {
 		"ghcr.io/devcontainers-contrib/features/zsh-plugins:0": "0.0.^4",
-		"ghcr.io/devcontainers/features/sshd:1":"1.0.^9"
+		// "ghcr.io/devcontainers/features/sshd:1":"1.0.^9"
 	},
 	/* default for tini init : false */
 	"init":false,
