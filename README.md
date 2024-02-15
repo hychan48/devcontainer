@@ -9,7 +9,26 @@
 - [ ] SSH Keys and Secrets
 - [ ] VSCode Extensions and Settings
 - [ ] Packer / WSL Docker
+## up down
+* [labs/git_readme_devcontainers.md](labs/git_readme_devcontainers.md)
+* [.devcontainer/Dockerfile](.devcontainer/Dockerfile)
+* [.devcontainer/devcontainer.json](.devcontainer/devcontainer.json)
+```bash
+#!pwsh.exe
+pnpm add -g @devcontainers/cli
 
+devcontainer build --workspace-folder . --image-name jchan48h/devcontainer:dev
+devcontainer up --id-label name=val --workspace-folder . --remove-existing-container # force and no detach...
+devcontainer exec --id-label name=val --workspace-folder . "zsh"
+# todo launch / attach... need command for that
+
+git config --global --add safe.directory /workspaces/devcontainer
+git submodule init
+git submodule update --init --recursive
+
+git config --global --list
+
+```
 ## Backlog
 * $profile
 * ahk / other key bindings
@@ -24,9 +43,11 @@
 
 ## push fixme / test
 * use f1 to launch devcontainer to try?
-```bash
-docker push jchan48h/devcontainer:<tagname>
-```
+
+
+
+
+
 
 ```txt
 .
