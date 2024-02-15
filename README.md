@@ -2,11 +2,16 @@
 * Under Construction
 ## Tasks
 - [ ] Common Dev Dependencies
-- [ ] OMZ ZSH Shell
-  - [ ] Aliases
-  - [ ] Plugins
+  * might've been done from devcontainer
+- [x] OMZ ZSH Shell
+  - [x] Aliases
+  - [x] Plugins
 - [ ] Git
+  - [x] Git config is passed over. just need to be careful of some of the configs
 - [ ] SSH Keys and Secrets
+  - [x] Dev container auto mounts ssh-agent
+  - [ ] SSH Config
+
 - [ ] VSCode Extensions and Settings
 - [ ] Packer / WSL Docker
 ## up down
@@ -16,17 +21,19 @@
 ```bash
 #!pwsh.exe
 pnpm add -g @devcontainers/cli
+git submodule update --init --recursive # have to do this before the container starts
+# might want to add some git stuff to the container
 
 devcontainer build --workspace-folder . --image-name jchan48h/devcontainer:dev
 devcontainer up --id-label name=val --workspace-folder . --remove-existing-container # force and no detach...
 devcontainer exec --id-label name=val --workspace-folder . "zsh"
-# todo launch / attach... need command for that
+# todo launch / attach... need command for that. and fix the container
 
 git config --global --add safe.directory /workspaces/devcontainer
+
 git submodule init
 git submodule update
 git-submodule --help
-git submodule update --init --recursive
 
 git config --global --list
 

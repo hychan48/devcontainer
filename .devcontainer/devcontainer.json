@@ -10,7 +10,7 @@
 	code labs/git_readme_devcontainers.md
 	
 	devcontainer build --workspace-folder . --image-name jchan48h/devcontainer:dev
-
+	
 	*/
 	// "image": "mcr.microsoft.com/devcontainers/base:bullseye", // debian 11... old
 	// "image": "mcr.microsoft.com/devcontainers/base:ubuntu", //jammy 22.04... newer than bulleyes
@@ -22,24 +22,32 @@
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// builds too slow
 	"features": {
-		"ghcr.io/devcontainers-contrib/features/zsh-plugins:0": "0.0.^4",
-		// "ghcr.io/devcontainers/features/sshd:1":"1.0.^9"
-	},
-	/* default for tini init : false */
-	"init":false,
-	"privileged":false
-	/**
+		"ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {
+			/* https://github.com/devcontainers-contrib/features/tree/main/src/zsh-plugins */
+			"version": "0.0.^4",
+			/* https://github.com/zsh-users */
+			"plugins": "zsh-autosuggestions zsh-syntax-highlighting zsh-completions",
+			"omzPlugins": "https://github.com/zsh-users/zsh-autosuggestions https://github.com/zsh-users/zsh-syntax-highlighting https://github.com/zsh-users/zsh-completions"
+			
+			// "ghcr.io/devcontainers/features/sshd:1":"1.0.^9"
+		},
+		/* default for tini init : false */
+		// "init":false,
+		// "privileged":false
+		/**
 		mounts 
-	*/
-
+		*/
+		
+		
+		
+		// Use 'forwardPorts' to make a list of ports inside the container available locally.
+		// "forwardPorts": [],
+		
+		// Configure tool-specific properties.
+		// "customizations": {},
+		
+		// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+		// "remoteUser": "root"
+	}
 	
-
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
-
-	// Configure tool-specific properties.
-	// "customizations": {},
-
-	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
 }
