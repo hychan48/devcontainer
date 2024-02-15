@@ -143,6 +143,10 @@ docker pull jchan48h/devcontainer:latest
 # Run this on a new pull?
 git submodule init
 
+git config --global --add safe.directory /workspaces/devcontainer
+git config --global auto.crlf input # this one is fake
+git config --global core.autocrlf input # this one...
+
 # submodule name
 rmdir -force test
 git.exe reset --hard
