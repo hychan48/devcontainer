@@ -56,6 +56,23 @@ git submodule update --init --recursive
 git config --global core.filemode false
 git config --global core.filemode
 ```
+# Exists
+* [x] Rsync
+* [x] wget
+* [x] curl
+* [x] ssh
+* [x] git
+* [x] python3
+* [ ] node
+* [ ] pipx
+* [ ] nginx
+* [ ] sshd
+* [ ] sudo -e
+* [ ] tmux
+  * screen
+* [ ] systemctl (negative...)
+
+
 ## Backlog
 * $profile
 * ahk / other key bindings
