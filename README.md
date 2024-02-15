@@ -24,9 +24,18 @@ devcontainer exec --id-label name=val --workspace-folder . "zsh"
 
 git config --global --add safe.directory /workspaces/devcontainer
 git submodule init
+git submodule update
+git-submodule --help
 git submodule update --init --recursive
 
 git config --global --list
+
+git submodule deinit test/bats
+git submodule deinit -f test/bats
+git submodule deinit -f test/test_helper/bats-assert
+git submodule deinit -f test/test_helper/bats-support
+
+
 
 ```
 ## Backlog
