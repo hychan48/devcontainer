@@ -20,3 +20,22 @@ docker pull jchan48h/devcontainer:latest
 # non docker
 
 ```
+
+
+# Git submodule bats
+* checkout issue debug
+```powershell
+# Run this on a new pull?
+git submodule init
+
+# submodule name
+rmdir -force test
+git.exe reset --hard
+git.exe status
+
+# this is one time
+git submodule update --init --recursive
+
+# this updates? dont run these
+git submodule update --remote --merge
+```
