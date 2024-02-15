@@ -2,17 +2,17 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/debian
 {
 	// "name": "Debian",
-	"name": "Ub2204",
+	"name": "Ubuntu 22", // actually a key ? lol
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	// https://containers.dev/templates
 	// "image": "mcr.microsoft.com/devcontainers/base:bullseye", // debian 11... old
-	"image": "mcr.microsoft.com/devcontainers/base:bullsjammy", //jammy 22.04... newer than bulleyes
+	"image": "mcr.microsoft.com/devcontainers/base:ubuntu", //jammy 22.04... newer than bulleyes
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	"features": {
 		"ghcr.io/devcontainers-contrib/features/zsh-plugins:0": "0.0.^4",
-		"ghcr.io/devcontainers/features/sshd:1":"1.0.^9",
-	},
+		"ghcr.io/devcontainers/features/sshd:1":"1.0.^9"
+	}
 	
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.

@@ -1,0 +1,9 @@
+{
+	"folders": [
+		{
+			"name": "devcontainer",
+			"path": ".."
+		}
+	],
+	"settings": {}
+}
