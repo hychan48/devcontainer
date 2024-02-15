@@ -22,11 +22,14 @@ alias dmesg='dmesg -T'
 alias jc-code='code -r' #open in current window
 alias jc-find-files='find . -type f -name'
 alias gcm='git fetch origin;git checkout main;git fetch origin --prune'
-alias crlfGit='git config --global core.autocrlf true'
+alias crlfGit='git config --global core.autocrlf input'
 alias cdd="cd `git rev-parse --show-toplevel`"
 
 # true is for crossplatform...
 # need to verify this one:
+# careful running this one... should skip certain files or focus on certain files
+# like .sh etc. because it can break... it shouldnt do recurse i feel either
+# alias fixcrlf="find . -type f -exec sed -i 's/\r$//' {} \;"
 # alias crlfRm='find . -type f -exec sed -i \'s/\r$//\' {} \;'
 # remember VSCode can add to path
 # TERM=xterm-256color + tmux
