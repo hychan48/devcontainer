@@ -16,6 +16,7 @@ docker container prune -f
 devcontainer --help
 devcontainer build --help
 devcontainer build --workspace-folder . --image-name jchan48h/devcontainer:dev
+docker push jchan48h/devcontainer:dev
 docker container stop $(docker container ls -aq) # stop all containers
 docker container prune -f # remove all containers
 
