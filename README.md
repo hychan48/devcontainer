@@ -35,7 +35,15 @@ git submodule deinit -f test/bats
 git submodule deinit -f test/test_helper/bats-assert
 git submodule deinit -f test/test_helper/bats-support
 
+git submodule add https://github.com/bats-core/bats-core.git test/bats
+git submodule add https://github.com/bats-core/bats-support.git test/test_helper/bats-support
+git submodule add https://github.com/bats-core/bats-assert.git test/test_helper/bats-assert
 
+git clone --recurse-submodules <repository-url>
+# if cloned already
+git submodule update --init
+## or
+git submodule update --init --recursive
 
 ```
 ## Backlog
