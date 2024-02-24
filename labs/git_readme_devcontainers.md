@@ -1,4 +1,21 @@
 # Commands
+## VSCode
+* wsl settings
+* careful, don't think it was the devdrive
+* but the setting inside docker engine on windows
+## wsl Docker vscode
+* probably because it's forwarding from wsl...
+* resources
+  * advanced
+    * can change the ext.vhdx location here
+  * wsl integration
+    * Enable default
+
+# Defaults
+* user is `vscode`
+* pwd is `/workspaces/devcontainer`
+  * pwd is `/workspaces/<folder_project_name>`
+
 ## Files
 ```bash
 tree .devcontainer .vscode
