@@ -51,8 +51,9 @@ $script_directory/zsh-plugins-install.copy.sh
 # https://codeforwings.github.io/vite-press-docs/posix/docs_readme_bash.html#zshrc
 echo 'PROMPT="$USERNAME@`hostname`%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ ) %{$fg[cyan]%}%c%{$reset_color%} "' >> ~/.zshrc
 
-if [ $(tput colors) == "256" ]; then
+if [ $(tput colors -T xterm-256color) == "256" ]; then
   # maybe i should check before doing so. and add my own little snippet
+  # tput colors -T xterm-256color
   echo 'export TERM=xterm-256color' >> ~/.zshrc
 fi
 source ~/.zshrc
@@ -63,6 +64,25 @@ lib/readme_zsh_plugin_copy.md.sh
 # debug plugins
 cat ~/.zshrc | grep plugins
 
+# interesting i can install xterm
+# but i think that's a gui app
+# debug term
+echo $TERM
+# tree looks funny
+pstree -s $$
+ps -o comm= -p $(ps -o ppid= -p $$)
+
+# encoding
+# empty...
+echo $LC_CTYPE
+echo $LANG
+printenv LC_CTYPE
+printenv LANG
+echo -e '\xe2\x82\xac'
+echo -e '\xe2\x82\xac' | grep '€' # doesnt work lol
+echo -e '\xe2\x82\xac' | grep -P '\xe2\x82\xac'
+iconv -f utf-8 -t utf-8 <<< '\xe2\x82\xac' # €
+luit -encoding utf-8 echo -e '\xe2\x82\xac' # €
 
 ###
 pwd

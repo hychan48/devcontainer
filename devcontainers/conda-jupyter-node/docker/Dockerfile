@@ -32,6 +32,8 @@ HEALTHCHECK --interval=5m --timeout=3s \
 # cmd is also overided by compose since entrypoint was declared there
 SHELL ["/bin/zsh", "-c"]
 ENV SHELL=/usr/bin/zsh
+ENV LANG=en_CA.UTF-8
+ENV TERM=xterm-256color
 COPY ./lib/*.sh ./lib/
 RUN set -x ; chsh -s $(which zsh) && ./lib/readme_zsh_plugin_copy.md.sh
 CMD /bin/zsh

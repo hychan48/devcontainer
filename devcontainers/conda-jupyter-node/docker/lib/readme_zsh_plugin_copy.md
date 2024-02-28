@@ -40,6 +40,10 @@ sudo apt-get update && apt-get install -y procps
 # feels more liek a packer thing here
 ```
 
+# todo
+* [ ] add sudo
+* [ ] rsync?
+
 # Schema here
 ```jsonc
 {
