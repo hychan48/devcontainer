@@ -8,6 +8,7 @@ services:
     # comment out to skip build
     # called docker-webapp for some reason
     container_name: jupyter-webapp
+    hostname: jupyter-webapp
     # for dev: maybe should add a dev env file
     stdin_open: true # docker run -i. needed until a service is running
     tty: true        # docker run -t. instead of bash... cuz bash is not a service
@@ -15,6 +16,8 @@ services:
     build: 
       context: .
       dockerfile: ./Dockerfile
+    entrypoint: ./entrypoints/smoke-tests.sh # defn worked
+    command: /bin/zsh # since entrypoint is defined
     # image: jchan48h/conda-jupyter-node
     volumes:
       - .:/webapp

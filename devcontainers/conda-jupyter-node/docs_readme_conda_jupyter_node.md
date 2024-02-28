@@ -46,11 +46,17 @@ docker container prune -f
 exit
 docker compose -f ./docker/docker-compose.yml rm --force --volumes
 docker compose -f ./docker/docker-compose.yml down --remove-orphans --volumes
+docker compose -f ./docker/docker-compose.yml down
 docker compose -f ./docker/docker-compose.yml up --build
+docker compose -f ./docker/docker-compose.yml up --build -d
 docker compose -f ./docker/docker-compose.yml up -d # detached
+docker compose -f ./docker/docker-compose.yml up # to see the logs
+docker compose -f ./docker/docker-compose.yml start
+docker compose -f ./docker/docker-compose.yml attach webapp # will kill if exit
+docker compose -f ./docker/docker-compose.yml exec webapp /bin/zsh
 # docker compose -f ./docker/docker-compose.yml
 # docker run attaches to the terminal
-docker run -it --rm --name conda-jupyter-node --hostname cfn conda-jupyter-node:latest /bin/zsh
+# docker run -it --rm --name conda-jupyter-node --hostname cfn conda-jupyter-node /bin/zsh
 # smoke tests
 pwd |grep webapp
 tree `pwd`
@@ -59,7 +65,7 @@ exit
 # health check - in another terminal
 docker container ls | grep conda-jupyter-node |grep health
 docker image ls
-```
+```fac
 
 
 # docker run --entrypoint /new/entrypoint your_image
