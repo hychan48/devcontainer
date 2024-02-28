@@ -46,8 +46,8 @@ docker container prune -f
 exit
 docker compose -f ./docker/docker-compose.yml rm --force --volumes
 docker compose -f ./docker/docker-compose.yml down --remove-orphans --volumes
-docker compose -f ./docker/docker-compose.yml up
 docker compose -f ./docker/docker-compose.yml up --build
+docker compose -f ./docker/docker-compose.yml up -d # detached
 # docker compose -f ./docker/docker-compose.yml
 # docker run attaches to the terminal
 docker run -it --rm --name conda-jupyter-node --hostname cfn conda-jupyter-node:latest /bin/zsh
