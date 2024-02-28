@@ -1,5 +1,6 @@
 # Hychan48's Dev Container
 * Under Construction
+* [Docker Quick Notes](https://codeforwings.github.io/vite-press-docs/ddocs_docker/docs_readme_docker.html#docker-quick-notes)
 ## Tasks
 - [ ] Common Dev Dependencies
   * might've been done from devcontainer
