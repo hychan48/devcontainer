@@ -2,7 +2,7 @@
 ## Goal
 * Use notebook like
 * https://streamlit.io/
-* juypterlab
+* jupyterLab Notebook
 * docker seems much faster than packer and devcontainer when creating the initial image
 
 
@@ -15,13 +15,13 @@
   * Check Configurations
 * [ ] Add nice to haves
 ## Validation Criteria
-* [ ] conda is installed
-* [ ] python is installed 
+* [x] conda is installed
+* [x] python is installed 
   * (micromamba doesnt install python right away)
-* [ ] jupyterlab is installed
+* [x] jupyterlab is installed
 * [ ] jupyterlab is running
 * [ ] jupyterlab is accessible from the host
-* [ ] jupyterlab is accessible from the browser
+* [x] jupyterlab is accessible from the browser
 * [ ] jupyterlab is accessible w/o token
 
 ###  Nice to haves
@@ -72,17 +72,18 @@ docker image ls
 ```
 
 # Backlog
-* node / npm
-* zsh
-* tree
-* oh-my-zsh
+* https://codeforwings.github.io/vite-press-docs/posix/docs_readme_bash.html#install-oh-my-zsh
+
+* [x] node / npm
+* [x] zsh
+* [x] tree
+* [x] oh-my-zsh
   * https://github.com/devcontainers-contrib/features/tree/main/src/zsh-plugins
 * tmux
-* https://codeforwings.github.io/vite-press-docs/posix/docs_readme_bash.html#install-oh-my-zsh
 
 # Not Planned
 * ssh
-* git ocnfig
+* git config
 * packer
 * voila
 * network etc.
@@ -92,3 +93,24 @@ docker image ls
 * migrate / check the codespace sample
 * squid / apt-cacher-ng
   * just ignore for now.. docker is fast enough
+
+
+
+# JuptyerLab
+```bash
+jupyter notebook --generate-config
+jupyter notebook password
+jupyter lab list
+jupyter lab --help
+jupyter lab --ip=0.0.0.0
+jupyter lab --no-browser
+jupyter lab --notebook-dir=/path/to/notebook/directory
+# right... need to default th theme etc
+```
+
+# Other kernels
+* https://docs.jupyter.org/en/latest/projects/kernels.html
+* https://github.com/jupyter/jupyter/wiki/Jupyter-kernels
+
+* https://github.com/n-riesco/ijavascript
+  * ijavascript

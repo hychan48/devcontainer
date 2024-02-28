@@ -6,7 +6,7 @@ FROM debian:bookworm-slim
 # omz: git ca-certificates procps (ps)
 RUN apt-get update && apt-get install -y \
   curl \
-  zsh tree wget git ca-certificates procps \
+  zsh tree wget git ca-certificates procps tar bzip2 \
   && rm -rf /var/lib/apt/lists/*
 # rm -rf /var/lib/apt/lists/* is to clean up after apt-get
 # maybe add tmux etc. only

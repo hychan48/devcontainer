@@ -6,6 +6,7 @@ code devcontainers/conda-jupyter-node
 ```
 ```bash
 docker compose -f ./docker/docker-compose.yml up -d # detached
+docker compose -f ./docker/docker-compose.yml up -d --build # 
 
 docker compose -f ./docker/docker-compose.yml start
 docker compose -f ./docker/docker-compose.yml attach webapp # will kill if exit

@@ -31,8 +31,10 @@ log_packages() {
     fi
   done
 }
-
-log_packages git ca-certificates zsh wget
+log_packages tar curl bzip2 micromamba python pip pipx jupyter node
 exit 0
+#########
 ./tests/smoke-test-0.sh
+# debug works well:
+log_packages git ca-certificates zsh wget
 
