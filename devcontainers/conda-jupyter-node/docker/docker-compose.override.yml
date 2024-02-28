@@ -1,0 +1,11 @@
+# Docker Compose for mounting volumes during build
+version: "3.8"
+services:
+  webapp:
+    # entrypoint: ./entrypoints/smoke-tests.sh # defn worked
+    entrypoint: ./entrypoints/labs/conda-micromamba.sh
+
+
+    # ports is it annray... gest appendd
+    # ports:
+    #   - "8888:8888"
