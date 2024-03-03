@@ -1,0 +1,26 @@
+# Docker Compose for mounting volumes during build
+version: "3.8"
+name: conda-jupyter-node
+# i guess proper name would be conda-node-jupyter so
+# compose would auto append
+services:
+  webapp:
+    # comment out to skip build
+    # called docker-webapp for some reason
+    container_name: jupyter-webapp
+    hostname: jupyter-webapp
+    # for dev: maybe should add a dev env file
+    stdin_open: true # docker run -i. needed until a service is running
+    tty: true        # docker run -t. instead of bash... cuz bash is not a service
+    
+    build: 
+      context: .
+      dockerfile: ./Dockerfile
+    entrypoint: ./entrypoints/smoke-tests.sh # defn worked
+    command: /bin/zsh # since entrypoint is defined
+    # image: jchan48h/conda-jupyter-node
+    volumes:
+      - .:/webapp
+
+    ports:
+      - "8888:8888"
